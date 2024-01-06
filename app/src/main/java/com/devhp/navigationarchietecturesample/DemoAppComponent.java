@@ -2,11 +2,14 @@ package com.devhp.navigationarchietecturesample;
 
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.LifecycleObserver;
+
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.OnLifecycleEvent;
 
-public class DemoAppComponent implements LifecycleObserver {
+public class DemoAppComponent implements DefaultLifecycleObserver {
     private final String activityName;
     private static final String TAG = "DemoAppComponent";
 
@@ -14,26 +17,29 @@ public class DemoAppComponent implements LifecycleObserver {
         this.activityName = activityName;
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    protected void onCreate() {
+    @Override
+    public void onCreate(@NonNull LifecycleOwner owner) {
+        DefaultLifecycleObserver.super.onCreate(owner);
         Log.d(TAG, "DemoAppComponent " + "onCreate: " + activityName);
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
-    protected void onPause() {
+
+    @Override
+    public void onPause(@NonNull LifecycleOwner owner) {
+        DefaultLifecycleObserver.super.onPause(owner);
         Log.d(TAG, "DemoAppComponent " + "onPause: " + activityName);
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
-    protected void onResume() {
+    @Override
+    public void onResume(@NonNull LifecycleOwner owner) {
+        DefaultLifecycleObserver.super.onResume(owner);
         Log.d(TAG, "DemoAppComponent " + "onResume: " + activityName);
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-    protected void onDestroy() {
+    @Override
+    public void onDestroy(@NonNull LifecycleOwner owner) {
+        DefaultLifecycleObserver.super.onDestroy(owner);
         Log.d(TAG, "DemoAppComponent " + "onDestroy: " + activityName);
     }
-
-
 }
 

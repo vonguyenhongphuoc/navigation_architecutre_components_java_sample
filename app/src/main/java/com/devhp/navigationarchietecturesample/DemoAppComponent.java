@@ -1,6 +1,8 @@
 package com.devhp.navigationarchietecturesample;
 
+import android.app.Application;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.DefaultLifecycleObserver;
@@ -15,6 +17,7 @@ public class DemoAppComponent implements DefaultLifecycleObserver {
 
     public DemoAppComponent(String activityName) {
         this.activityName = activityName;
+
     }
 
     @Override

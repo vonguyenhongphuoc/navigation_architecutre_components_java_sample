@@ -44,6 +44,7 @@ dependencies {
     implementation("androidx.navigation:navigation-ui:$nav_version")
     implementation("androidx.lifecycle:lifecycle-runtime:$lifecycle_version")
     implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-process:$lifecycle_version")
 
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")

@@ -16,11 +16,13 @@ import com.devhp.navigationarchietecturesample.databinding.FragmentThirdBinding;
 public class ThirdFragment extends Fragment {
 
     private FragmentThirdBinding binding;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("MyTag", "ThirdFragment onCreate");
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -44,11 +46,13 @@ public class ThirdFragment extends Fragment {
 //            Navigation.findNavController(v).popBackStack(R.id.secondFragment, true);
         });
     }
+
     @Override
     public void onDestroy() {
         super.onDestroy();
         Log.d("MyTag", "ThirdFragment onDestroy");
     }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
